@@ -42,12 +42,18 @@ export default {
     justify-content: start;
     align-content: center;
 }
+.col > .card {
+    display: flex;
+    align-items: center;
+}
 .title_page{
-    margin: 2.5rem 1rem 0;
+    margin: 0 1rem 0;
 }
 .logo > img {
-   width: 300px;
-
+    width: 50px;
+}
+.card .logo {
+    margin: 4rem 0 0;
 }
 
 </style>

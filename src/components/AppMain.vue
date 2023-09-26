@@ -20,29 +20,36 @@ export default {
 
 <template>
     <main>
-        <div class="container_all_cards">
 
-            
-                <label class="label_title" for="type">Choose a type:</label>
-
+        <div class="contain_options">
+            <label class="label_title" for="type">Choose a type:</label>
+            <div>
                 <select class="label_option" name="cars" id="cars">
                     <option value="alien">Alien</option>
                     <option value="saab">Saab</option>
                     <option value="mercedes">Mercedes</option>
                     <option value="audi">Audi</option>
                 </select>
+            </div>
+        </div>
 
-                <div class="banner">Founded 39</div>
 
-                <div class="row">
-                    <div v-for="card in store.cards" class="col">
-                        <div class="card">
-                            <img class="card_deck" :src="card.card_images[0].image_url" alt="">
-                            <h4>{{ card.name }}</h4>
-                            <p><small>{{ card.archetype }}</small></p>
-                        </div>
+        <div class="container_all_cards">
+
+
+
+
+            <div class="banner">Founded 39</div>
+
+            <div class="row">
+                <div v-for="card in store.cards" class="col">
+                    <div class="card">
+                        <img class="card_deck" :src="card.card_images[0].image_url" alt="">
+                        <h4>{{ card.name }}</h4>
+                        <p><small>{{ card.archetype }}</small></p>
                     </div>
                 </div>
+            </div>
 
         </div>
     </main>
@@ -53,7 +60,9 @@ main {
     background-color: orange;
     padding: 3rem 0;
 }
-
+.contain_options {
+ padding: 1rem 6rem;
+}
 .container_all_cards {
     width: 80%;
     margin: 0 auto 0;
@@ -63,12 +72,17 @@ main {
     flex-direction: column;
     padding: 2rem;
 }
+
 .label_title {
     margin: 0.5rem 0;
 }
+
 .label_option {
     width: 10%;
+    margin: 0.5rem 0;
+    padding: 0.2rem;
 }
+
 .row {
     display: flex;
     flex-wrap: wrap;
