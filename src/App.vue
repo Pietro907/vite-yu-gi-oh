@@ -1,24 +1,37 @@
 
 <script>
-//import 'node_modules/bootstrap/scss/bootstrap'
 import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 
 
 
 export default {
+ 
+
+  components: { 
     AppHeader,
-    components: { AppHeader }
+    AppMain,
+   },
+  data() {
+    return {
+    
+
+    }
+
+  },
+
 }
+
 </script>
 
 
 <template>
-<AppHeader></AppHeader>
-
+  <AppHeader></AppHeader>
+  <AppMain></AppMain>
 </template>
 
 
 
 <style lang="sass" scoped>
-
+//@use 'percorso bootstrap'  va tolto lo scoped
 </style>
