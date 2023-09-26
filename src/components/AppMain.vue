@@ -19,36 +19,56 @@ export default {
 </script>
 
 <template>
+    <main>
+        <div class="container_all_cards">
 
-    <div class="container_all_cards">
-banner
-        <div class="">Founded 39</div>
-        
-        <div class="row">
-            <div v-for="card in store.cards" class="col">
-                <div class="card">
-                    <img class="card_deck"  :src="card.card_images[0].image_url" alt="">
-                    <h5>{{ card.name }}</h5>
-                    <p><small>{{ card.archetype }}</small></p>
+            
+                <label class="label_title" for="type">Choose a type:</label>
+
+                <select class="label_option" name="cars" id="cars">
+                    <option value="alien">Alien</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+
+                <div class="banner">Founded 39</div>
+
+                <div class="row">
+                    <div v-for="card in store.cards" class="col">
+                        <div class="card">
+                            <img class="card_deck" :src="card.card_images[0].image_url" alt="">
+                            <h4>{{ card.name }}</h4>
+                            <p><small>{{ card.archetype }}</small></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    
-    </div>
 
+        </div>
+    </main>
 </template>
 
 <style scoped>
+main {
+    background-color: orange;
+    padding: 3rem 0;
+}
+
 .container_all_cards {
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 0;
     border: 2px solid black;
-    background-color: orange;
+    background-color: white;
     display: flex;
     flex-direction: column;
     padding: 2rem;
 }
-
+.label_title {
+    margin: 0.5rem 0;
+}
+.label_option {
+    width: 10%;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -57,7 +77,10 @@ banner
 }
 
 .banner {
-    background-color: aqua;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    margin: 2rem 0 0;
 }
 
 .col {
@@ -66,17 +89,17 @@ banner
 }
 
 .card {
-    background-color: white;
+    background-color: orange;
     width: 180px;
     height: 400px;
     text-align: center;
+
     & img {
         width: 100%;
     }
+
+    & h4 {
+        color: white;
+    }
 }
-
-
-
-
-
 </style>

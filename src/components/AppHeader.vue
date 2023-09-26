@@ -17,7 +17,7 @@ export default {
 
             <div class="col">
                 <div class="card logo">
-                    <div class="debug"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Yu-Gi-Oh%21_%28Logo%29.jpg/1200px-Yu-Gi-Oh%21_%28Logo%29.jpg" alt="">
                 </div>
             </div>
 
@@ -43,12 +43,11 @@ export default {
     align-content: center;
 }
 .title_page{
-    margin: 0 1rem 0;
+    margin: 2.5rem 1rem 0;
 }
-.debug {
-    background-color: red;
-    width: 50px;
-    height: 50px;
+.logo > img {
+   width: 300px;
+
 }
 
 </style>
