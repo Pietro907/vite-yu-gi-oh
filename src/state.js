@@ -6,7 +6,9 @@ import { reactive } from 'vue';
 
 export const state = reactive({
 
-    info: null,
+    arch: '',
+
+    //loading: null,
 
     cards: null,
 
@@ -16,7 +18,8 @@ export const state = reactive({
         //collego axios
         axios(this.base_url)
         .then(response => {
-            console.log(response.data.data);
+            //console.log(response.data.data);
+            
             //permette di accedere in modo semplice saltando il data.data
             this.cards = response.data.data;
         })

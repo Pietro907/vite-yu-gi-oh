@@ -3,16 +3,19 @@
 <script >
 import { state } from '../state.js';
 import SelectMain from './SelectMain.vue';
+import ContainerCard from './ContainerCard.vue';
+
 
 export default {
     name: 'AppMain',
     components: {
         SelectMain,
+        ContainerCard,
     },
     data() {
         return {
             state,
-            
+
         }
 
     },
@@ -20,8 +23,28 @@ export default {
     created() {
         state.fetchData();
     },
+    methods: {
+        filterArcheType() {
+
+            axios(this.state.arch)
+                .then(response => {
+                    console.log(response.arch = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=alien&num=20&offset=0');
+                    //permette di accedere in modo semplice saltando il data.data
+                    //this.cards = response.data.data;
+                })
+        },
+
+    /*     console.log(state.arch);
+
+        this.arch = 'https://db.ygoprodeck.com/api/v7/cardinfo.php' + '?archetype=alien';
+        console.log(this.arch);
+ */
+    }
+
 
 }
+
+
 
 
 </script>
@@ -29,27 +52,21 @@ export default {
 <template>
     <main>
 
-       <SelectMain/>
-        
+        <SelectMain @arche-type="filterArcheType()" /> <!-- nome emits con nome funzione() -->
+
 
         <div class="container_all_cards">
-
-
-
 
             <div class="banner">Founded 39</div>
 
             <div class="row">
-                <div v-for="card in state.cards" class="col">
-                    <div class="card">
-                        <img class="card_deck" :src="card.card_images[0].image_url" alt="">
-                        <h4>{{ card.name }}</h4>
-                        <p><small>{{ card.archetype }}</small></p>
-                    </div>
-                </div>
+
+                <ContainerCard v-for="card in state.cards" :card="card" />
+
             </div>
 
         </div>
+
     </main>
 </template>
 
@@ -58,8 +75,6 @@ main {
     background-color: orange;
     padding: 3rem 0;
 }
-
-
 
 .container_all_cards {
     width: 80%;
@@ -86,24 +101,4 @@ main {
     padding: 1rem;
     margin: 2rem 0 0;
 }
-
-.col {
-    width: calc(100% / 12 * 2);
-    margin: 0 1rem 0 0;
-}
-
-.card {
-    background-color: orange;
-    width: 180px;
-    height: 400px;
-    text-align: center;
-
-    & img {
-        width: 100%;
-    }
-
-    & h4 {
-        color: white;
-    }
-}
-</style>../state.js
+</style>
