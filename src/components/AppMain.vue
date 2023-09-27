@@ -33,6 +33,7 @@ export default {
                     //this.cards = response.data.data;
                 })
         },
+        
 
     /*     console.log(state.arch);
 
