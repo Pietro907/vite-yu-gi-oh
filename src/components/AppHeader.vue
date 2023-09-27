@@ -1,6 +1,6 @@
 
 <script>
-import { store } from '../store.js';
+import { state } from '../state.js';
 
 export default {
     name: 'AppHeader',
@@ -56,4 +56,4 @@ export default {
     margin: 4rem 0 0;
 }
 
-</style>
+</style>../state.js

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { reactive } from 'vue';
 
 
-export const store = reactive({
+export const state = reactive({
 
     info: null,
 

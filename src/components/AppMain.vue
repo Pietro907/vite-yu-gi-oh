@@ -1,17 +1,17 @@
         
 
 <script >
-import { store } from '../store.js';
+import { state } from '../state.js';
 
 export default {
     name: 'AppMain',
     data() {
         return {
-            store,
+            state,
         }
     },
     created() {
-        store.fetchData();
+        state.fetchData();
     }
 }
 
@@ -22,6 +22,7 @@ export default {
     <main>
 
         <div class="contain_options">
+
             <label class="label_title" for="type">Choose a type:</label>
             <div>
                 <select class="label_option" name="cars" id="cars">
@@ -31,6 +32,7 @@ export default {
                     <option value="audi">Audi</option>
                 </select>
             </div>
+            
         </div>
 
 
@@ -42,7 +44,7 @@ export default {
             <div class="banner">Founded 39</div>
 
             <div class="row">
-                <div v-for="card in store.cards" class="col">
+                <div v-for="card in state.cards" class="col">
                     <div class="card">
                         <img class="card_deck" :src="card.card_images[0].image_url" alt="">
                         <h4>{{ card.name }}</h4>
@@ -116,4 +118,4 @@ main {
         color: white;
     }
 }
-</style>
+</style>../state.js
